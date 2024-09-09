@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>DoodhPati aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const sayDate = function (str) {
+        console.log(str, Date.now());
+
+    }
+    const clear = setInterval(sayDate, 2000, "Fahad")
+
+    clearInterval(clear)
+
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = "Best Js Course"
+    }
+
+    document.querySelector('#start').addEventListener('click', startInterval);
+
+    function startInterval() {
+        changeMe = setInterval(changeText, 3000);
+        console.log("Start");
+    }
+    startInterval()
+
+    document.querySelector('#stop').addEventListener('click', stopInterval)
+    function stopInterval() {
+        clearInterval(changeMe)
+        console.log('Stop');
+    }
+
+</script>
+
+</html>
